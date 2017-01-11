@@ -83,6 +83,6 @@ install:
 build: off
 
 test_script:
-    - "%CMD_IN_ENV% conda build recipe --quiet"
+    - "%CMD_IN_ENV% conda build recipe --quiet --no-build-id --croot C:\"
 deploy_script:
     - cmd: upload_or_check_non_existence .\recipe conda-forge --channel=main
