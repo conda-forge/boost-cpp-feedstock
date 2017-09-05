@@ -9,6 +9,9 @@ source:
   fn:  {{ filename }}
   url: https://dl.bintray.com/boostorg/release/{{ version }}/source/{{ filename }}
   sha256: ea26712742e2fb079c2a566a31f3266973b76e38222b9f88b387e3c8b2f9902c
+  patches:
+    # https://github.com/boostorg/build/issues/230
+    - case-insensitive-env-vars.patch
 
 build:
   number: 0
