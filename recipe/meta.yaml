@@ -12,6 +12,8 @@ source:
   patches:
     # https://github.com/boostorg/build/issues/230
     - case-insensitive-env-vars.patch
+    # https://github.com/boostorg/build/pull/226
+    - fix-non-c90-lines.patch
 
 build:
   number: 0
