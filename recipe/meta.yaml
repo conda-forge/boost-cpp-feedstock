@@ -83,6 +83,8 @@ test:
     - if not exist %PREFIX%\\Library\\bin\\boost_{{ each_boost_lib }}.dll exit 1                          # [win]
     - if not exist %PREFIX%\\Library\\lib\\boost_{{ each_boost_lib }}.lib exit 1                          # [win]
     - if not exist %PREFIX%\\Library\\lib\\libboost_{{ each_boost_lib }}.lib exit 1                       # [win]
+    - file %PREFIX%\\Library\\bin\\boost_{{ each_boost_lib }}.dll                                         # [win]
+    - file %PREFIX%\\Library\\lib\\libboost_{{ each_boost_lib }}.lib                                      # [win]
     {% endfor %}
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
