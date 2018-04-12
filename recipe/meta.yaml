@@ -11,29 +11,24 @@ source:
 
 build:
   number: 1
-  skip: true            # [win and py36]
-  features:
-    - vc9               # [win and py27]
-    - vc14              # [win and (py35 or py36)]
 
 requirements:
   build:
-    - toolchain
-    - python            # [win]
-    - icu 58.*          # [unix]
-    - bzip2 1.0.*       # [unix]
-    - xz 5.2.*          # [unix]
+    - {{ compiler('c') }}    # [win]
+    - {{ compiler('cxx') }}  # [win]
+    - toolchain              # [unix]
+
+  host:
+    - icu 58.*               # [unix]
+    - bzip2 1.0.*            # [unix]
+    - xz 5.2.*               # [unix]
     - zlib 1.2.11
-    - vc 9              # [win and py27]
-    - vc 14             # [win and py35]
 
   run:
-    - icu 58.*          # [unix]
-    - bzip2 1.0.*       # [unix]
-    - xz 5.2.*          # [unix]
+    - icu 58.*               # [unix]
+    - bzip2 1.0.*            # [unix]
+    - xz 5.2.*               # [unix]
     - zlib 1.2.11
-    - vc 9              # [win and py27]
-    - vc 14             # [win and py35]
 
 test:
   commands:
