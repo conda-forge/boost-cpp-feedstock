@@ -1,0 +1,9 @@
+c_compiler:
+- vs2015
+cxx_compiler:
+- vs2015
+target_platform:
+- win-32
+zip_keys:
+- - c_compiler
+  - cxx_compiler
