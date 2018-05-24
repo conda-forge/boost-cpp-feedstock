@@ -22,14 +22,11 @@ requirements:
     - {{ compiler('cxx') }}
     - vc 9              # [win and py27]
     - vc 14             # [win and py35]
-    
-  host:
     - python            # [win]
     - icu 58.*          # [unix]
     - bzip2 1.0.*       # [unix]
     - xz 5.2.*          # [unix]
     - zlib 1.2.11
-
 
   run:
     - icu 58.*          # [unix]
