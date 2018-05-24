@@ -10,7 +10,7 @@ source:
   sha256: 2684c972994ee57fc5632e03bf044746f6eb45d4920c343937a465fd67a5adba
 
 build:
-  number: 0
+  number: 1
   skip: true            # [win and py36]
   features:
     - vc9               # [win and py27]
@@ -18,14 +18,18 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - vc 9              # [win and py27]
+    - vc 14             # [win and py35]
+    
+  host:
     - python            # [win]
     - icu 58.*          # [unix]
     - bzip2 1.0.*       # [unix]
     - xz 5.2.*          # [unix]
     - zlib 1.2.11
-    - vc 9              # [win and py27]
-    - vc 14             # [win and py35]
+
 
   run:
     - icu 58.*          # [unix]
