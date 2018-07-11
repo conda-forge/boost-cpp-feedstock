@@ -8,9 +8,11 @@ package:
 source:
   url: https://dl.bintray.com/boostorg/release/{{ version }}/source/{{ filename }}
   sha256: 2684c972994ee57fc5632e03bf044746f6eb45d4920c343937a465fd67a5adba
+  patches:
+    - boost_auto_link_system.diff
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -29,6 +31,10 @@ requirements:
     - zlib
 
 test:
+  files:
+    - test_win_link/*
+  requires:
+    - {{ compiler('cxx') }}   # [win]
   commands:
     # Verify Python headers are removed.
     - "! test -f $PREFIX/include/boost/python.hpp"                      # [unix]
