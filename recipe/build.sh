@@ -40,22 +40,40 @@ LINKFLAGS="${LINKFLAGS} -L${LIBRARY_PATH}"
 # https://stackoverflow.com/a/5244844/1005215
 sed -i.bak "s,cc,${TOOLSET},g" ${SRC_DIR}/project-config.jam
 
-./b2 -q \
-    variant=release \
-    address-model="${ARCH}" \
-    architecture=x86 \
-    debug-symbols=off \
-    threading=multi \
-    runtime-link=shared \
-    link=static,shared \
-    toolset=${TOOLSET}-custom \
-    include="${INCLUDE_PATH}" \
-    cxxflags="${CXXFLAGS}" \
-    cxxstd=14 \
-    linkflags="${LINKFLAGS}" \
-    --layout=system \
-    -j"${CPU_COUNT}" \
-    install | sed -e "s|${PREFIX}|<PREFIX>|g" | tee b2.log 2>&1
+if [[ "$cxx_compiler" == "toolchain_cxx" ]]; then
+    ./b2 -q \
+        variant=release \
+        address-model="${ARCH}" \
+        architecture=x86 \
+        debug-symbols=off \
+        threading=multi \
+        runtime-link=shared \
+        link=static,shared \
+        toolset=${TOOLSET}-custom \
+        include="${INCLUDE_PATH}" \
+        cxxflags="${CXXFLAGS}" \
+        cxxstd=14 \
+        linkflags="${LINKFLAGS}" \
+        --layout=system \
+        -j"${CPU_COUNT}" \
+        install | sed -e "s|${PREFIX}|<PREFIX>|g" | tee b2.log 2>&1
+else
+    ./b2 -q \
+        variant=release \
+        address-model="${ARCH}" \
+        architecture=x86 \
+        debug-symbols=off \
+        threading=multi \
+        runtime-link=shared \
+        link=static,shared \
+        toolset=${TOOLSET}-custom \
+        include="${INCLUDE_PATH}" \
+        cxxflags="${CXXFLAGS}" \
+        linkflags="${LINKFLAGS}" \
+        --layout=system \
+        -j"${CPU_COUNT}" \
+        install | sed -e "s|${PREFIX}|<PREFIX>|g" | tee b2.log 2>&1
+fi
 
 # Remove Python headers as we don't build Boost.Python.
 rm "${PREFIX}/include/boost/python.hpp"
