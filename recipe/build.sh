@@ -51,6 +51,7 @@ sed -i.bak "s,cc,${TOOLSET},g" ${SRC_DIR}/project-config.jam
     toolset=${TOOLSET}-custom \
     include="${INCLUDE_PATH}" \
     cxxflags="${CXXFLAGS}" \
+    cxxstd=14 \
     linkflags="${LINKFLAGS}" \
     --layout=system \
     -j"${CPU_COUNT}" \
