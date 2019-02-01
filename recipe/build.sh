@@ -50,7 +50,7 @@ sed -i.bak "s,cc,${TOOLSET},g" ${SRC_DIR}/project-config.jam
     link=static,shared \
     toolset=${TOOLSET}-custom \
     include="${INCLUDE_PATH}" \
-    cxxflags="${CXXFLAGS}" \
+    cxxflags="${CXXFLAGS} -std=c++14" \
     linkflags="${LINKFLAGS}" \
     --layout=system \
     -j"${CPU_COUNT}" \
