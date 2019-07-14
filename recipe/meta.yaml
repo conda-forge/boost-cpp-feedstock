@@ -1,4 +1,4 @@
-{% set version = "1.70.0" %}
+{% set version = "1.63.0" %}
 {% set filename = "boost_%s.tar.bz2" % version.replace(".", "_") %}
 
 package:
@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://dl.bintray.com/boostorg/release/{{ version }}/source/{{ filename }}
-  sha256: 430ae8354789de4fd19ee52f3b1f739e1fba576f0aded0897c3c2bc00fb38778
+  url: https://downloads.sourceforge.net/project/boost/boost/{{ version }}/{{ filename }}
+  sha256: beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0
 
 build:
   number: 0
@@ -69,6 +69,7 @@ test:
             "random",
             "regex",
             "serialization",
+            "signals",
             "system",
             "thread",
             "timer",
