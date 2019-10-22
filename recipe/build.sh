@@ -65,3 +65,6 @@ fi
 # Remove Python headers as we don't build Boost.Python.
 rm "${PREFIX}/include/boost/python.hpp"
 rm -r "${PREFIX}/include/boost/python"
+
+# Move the cmake directory in $PREFIX
+mv "${PREFIX}/lib/cmake" "${PREFIX}/lib/cmake-bak"
