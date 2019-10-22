@@ -24,6 +24,9 @@ rmdir /s /q %LIBRARY_INC%\boost\python
 move %LIBRARY_LIB%\boost*.dll "%LIBRARY_BIN%"
 if errorlevel 1 exit 1
 
+:: Move cmake configu files away
+ren %LIBRARY_LIB%\cmake %LIBRARY_LIB%\cmake-bak
+
 :: Set BOOST_AUTO_LINK_NOMANGLE so that auto-linking uses system layout
 echo &echo.                           >> %LIBRARY_INC%\boost\config\user.hpp
 echo #define BOOST_AUTO_LINK_NOMANGLE >> %LIBRARY_INC%\boost\config\user.hpp
