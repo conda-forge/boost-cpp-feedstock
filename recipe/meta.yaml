@@ -10,8 +10,10 @@ source:
   sha256: 59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
+  run_exports:
+    - {{ pin_subpackage('boost-cpp', max_pin='x.x') }}
 
 requirements:
   build:
@@ -91,7 +93,7 @@ test:
 
 about:
   home: http://www.boost.org/
-  license: Boost-1.0
+  license: BSL-1.0
   license_file: LICENSE_1_0.txt
   summary: Free peer-reviewed portable C++ source libraries.
 
