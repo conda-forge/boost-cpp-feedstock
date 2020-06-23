@@ -6,6 +6,7 @@ jobs:
 - job: osx
   pool:
     vmImage: macOS-10.14
+  timeoutInMinutes: 360
   strategy:
     matrix:
       osx_:
