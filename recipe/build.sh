@@ -19,7 +19,7 @@ CXXFLAGS="${CXXFLAGS} -fPIC"
 if [ "$(uname)" == "Darwin" ]; then
     TOOLSET=clang
 elif [ "$(uname)" == "Linux" ]; then
-    TOOLSET=gcc
+    TOOLSET=cc
 fi
 
 # http://www.boost.org/build/doc/html/bbv2/tasks/crosscompile.html
