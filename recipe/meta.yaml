@@ -8,9 +8,11 @@ package:
 source:
   url: https://dl.bintray.com/boostorg/release/{{ version }}/source/{{ filename }}
   sha256: 59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
+  patches:
+    - 456be0b7ecca065fbccf380c2f51e0985e608ba0.patch  # [osx and arm64]
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -102,3 +104,4 @@ extra:
     - ocefpaf
     - jschueller
     - isuruf
+    - xhochy
