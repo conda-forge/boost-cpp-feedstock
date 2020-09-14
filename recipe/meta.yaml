@@ -13,7 +13,7 @@ source:
     - 456be0b7ecca065fbccf380c2f51e0985e608ba0.patch  # [osx and arm64]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('boost-cpp', max_pin='x.x.x') }}
 
