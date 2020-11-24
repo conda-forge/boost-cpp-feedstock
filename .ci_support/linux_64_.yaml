@@ -1,32 +1,26 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
 bzip2:
 - '1'
-cdt_arch:
-- aarch64
 cdt_name:
-- cos7
+- cos6
 channel_sources:
-- conda-forge
+- conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '7.5'
+- '7'
 docker_image:
-- condaforge/linux-anvil-aarch64
+- quay.io/condaforge/linux-anvil-comp7
 icu:
 - '67'
 pin_run_as_build:
   bzip2:
     max_pin: x
-  icu:
-    max_pin: x
   xz:
     max_pin: x.x
 target_platform:
-- linux-aarch64
+- linux-64
 xz:
 - '5.2'
 zstd:
