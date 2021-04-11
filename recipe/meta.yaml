@@ -25,12 +25,6 @@ requirements:
     - bzip2
     - zstd
 
-  run:
-    - icu               # [unix]
-    - xz                # [unix]
-    - bzip2
-    - zstd
-
   run_constrained:
     - libboost <0
 
