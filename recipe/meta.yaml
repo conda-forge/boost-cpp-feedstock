@@ -2,7 +2,7 @@
 {% set filename = "boost_%s.tar.bz2" % version.replace(".", "_") %}
 
 package:
-  name: boost-cpp
+  name: libboost-cpp
   version: {{ version }}
 
 source:
@@ -79,19 +79,24 @@ test:
     {% endfor %}
 
 outputs:
+  - name: libboost-cpp
   - name: boost-cpp
+    requirements:
+      run:
+        - {{ pin_subpackage("libboost-cpp", exact=True) }}
+        - {{ pin_subpackage("boost-cppdev", exact=True) }}           # [unix]
   - name: boost-cppdev                                               # [unix]
     script: build_boost-cppdev.sh                                    # [unix]
     build:                                                           # [unix]
       run_exports:                                                   # [unix]
-        - {{ pin_subpackage("boost-cpp", max_pin="x.x") }}           # [unix]
+        - {{ pin_subpackage("libboost-cpp", max_pin="x.x") }}        # [unix]
     requirements:                                                    # [unix]
       build:                                                         # [unix]
         - {{ compiler('cxx') }}                                      # [unix]
       host:                                                          # [unix]
-        - {{ pin_subpackage("boost-cpp", exact=True) }}              # [unix]
+        - {{ pin_subpackage("libboost-cpp", exact=True) }}           # [unix]
       run:                                                           # [unix]
-        - {{ pin_subpackage("boost-cpp", exact=True) }}              # [unix]
+        - {{ pin_subpackage("libboost-cpp", exact=True) }}           # [unix]
     test:                                                            # [unix]
       commands:                                                      # [unix]
         # Verify Python headers are removed.
