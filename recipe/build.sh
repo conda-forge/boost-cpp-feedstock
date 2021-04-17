@@ -29,7 +29,11 @@ EOF
 
 LINKFLAGS="${LINKFLAGS} -L${LIBRARY_PATH}"
 
-CXX=${CXX_FOR_BUILD:-${CXX}} CC=${CC_FOR_BUILD:-${CC}} ./bootstrap.sh \
+# fake g++ for bootstrap
+mkdir fakecxx && ln -s ${CXX} fakecxx/g++
+export PATH=fakecxx:$PATH
+
+./bootstrap.sh \
     --prefix="${PREFIX}" \
     --without-libraries=python \
     --with-toolset=${TOOLSET} \
