@@ -12,7 +12,9 @@ source:
     - 5eff1ecc8413b0dc93a1ab047d7fed751e6cb40e.patch  # [not win]
 
 build:
-  number: 1
+  number: 2
+  run_exports:
+      - {{ pin_subpackage('boost-cpp', max_pin='x.x') }}
 
 requirements:
   build:
