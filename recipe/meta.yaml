@@ -11,9 +11,10 @@ source:
   patches:
     # https://github.com/boostorg/build/pull/642
     - 456be0b7ecca065fbccf380c2f51e0985e608ba0.patch  # [osx and arm64]
+    - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
