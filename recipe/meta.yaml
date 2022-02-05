@@ -14,7 +14,7 @@ source:
     - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
@@ -24,6 +24,7 @@ requirements:
     - icu               # [unix]
     - xz                # [unix]
     - bzip2
+    - zlib
     - zstd
 
   run:
@@ -36,6 +37,8 @@ requirements:
     - libboost <0
 
 test:
+  files:
+    - test
   commands:
     # Verify Python headers are removed.
     - "! test -f $PREFIX/include/boost/python.hpp"                      # [unix]
