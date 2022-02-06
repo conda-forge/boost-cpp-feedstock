@@ -1,5 +1,5 @@
 # Skip compile tests if we are cross-compiling
-if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
+if [ "${BUILD_PLATFORM}" != "${HOST_PLATFORM}" ]; then
   exit 0
 fi
 
