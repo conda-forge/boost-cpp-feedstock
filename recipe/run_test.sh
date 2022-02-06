@@ -1,5 +1,5 @@
 # Skip compile tests if we are cross-compiling
-if echo ${CONDA_TOOLCHAIN_HOST} | grep -q arm64-apple; then
+if [[ "${build_platform}" != "${target_platform}" ]]; then
   exit 0
 fi
 
