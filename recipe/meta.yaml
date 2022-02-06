@@ -40,7 +40,7 @@ test:
   files:
     - test
   requires:
-    - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}    # [build_platform == target_platform]
   commands:
     # Verify Python headers are removed.
     - "! test -f $PREFIX/include/boost/python.hpp"                      # [unix]
