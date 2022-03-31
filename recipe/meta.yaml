@@ -14,7 +14,7 @@ source:
     - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
 
 build:
-  number: 7
+  number: 8
 
 requirements:
   build:
