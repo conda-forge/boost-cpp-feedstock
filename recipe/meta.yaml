@@ -13,7 +13,7 @@ source:
     - 62e7321669f66a90e2a90c8f31af34f59ebc5d7a.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
