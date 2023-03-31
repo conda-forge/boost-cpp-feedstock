@@ -1,7 +1,7 @@
 diff --git a/include/boost/config/stdlib/libcpp.hpp b/include/boost/config/stdlib/libcpp.hpp
 index bc8536ead..0e9f2445e 100644
---- a/include/boost/config/stdlib/libcpp.hpp
-+++ b/include/boost/config/stdlib/libcpp.hpp
+--- a/boost/config/stdlib/libcpp.hpp
++++ b/boost/config/stdlib/libcpp.hpp
 @@ -168,4 +168,13 @@
  #  define BOOST_NO_CXX14_HDR_SHARED_MUTEX
  #endif
