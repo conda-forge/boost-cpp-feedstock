@@ -1,0 +1,8 @@
+# To avoid the ABI problems described in https://github.com/conda-forge/boost-cpp-feedstock/pull/130#issuecomment-1297532047, 
+# we fix the compiler versions used for boost 1.78.0 
+cxx_compiler_version:       # [linux]
+  - 10                      # [linux]
+cxx_compiler_version:       # [osx]
+  - 12                      # [osx]
+cxx_compiler:               # [win]
+  - vs2017                  # [win]
