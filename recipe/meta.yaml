@@ -15,7 +15,7 @@ source:
     - boost_config_libcxx16_compat.patch
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
