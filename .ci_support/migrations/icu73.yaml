@@ -3,5 +3,5 @@ __migrator:
   kind: version
   migration_number: 1
 icu:
-- '72'
-migrator_ts: 1679327092.7504842
+- '73'
+migrator_ts: 1692912856.1389868
