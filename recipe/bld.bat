@@ -10,7 +10,6 @@ if errorlevel 1 exit 1
     address-model=%ARCH% ^
     variant=release ^
     threading=multi ^
-    link=shared ^
     -j%CPU_COUNT% ^
     -s NO_COMPRESSION=0 ^
     -s NO_ZLIB=0 ^
