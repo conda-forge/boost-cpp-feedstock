@@ -12,7 +12,7 @@ source:
     - 456be0b7ecca065fbccf380c2f51e0985e608ba0.patch  # [osx and arm64]
 
 build:
-  number: 7
+  number: 8
 
 requirements:
   build:
@@ -80,7 +80,7 @@ test:
             "wserialization"
     ] %}
     {% for each_boost_lib in boost_libs %}
-    - test ! -f $PREFIX/lib/libboost_{{ each_boost_lib }}.a                                                 # [unix]
+    - test -f $PREFIX/lib/libboost_{{ each_boost_lib }}.a                                                 # [unix]
     - test -f $PREFIX/lib/libboost_{{ each_boost_lib }}.dylib                                             # [osx]
     - test -f $PREFIX/lib/libboost_{{ each_boost_lib }}.so                                                # [linux]
     - if not exist %PREFIX%\\Library\\bin\\boost_{{ each_boost_lib }}.dll exit 1                          # [win]
