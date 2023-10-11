@@ -65,8 +65,6 @@ fi
     abi="${ABI}" \
     debug-symbols=off \
     threading=multi \
-    runtime-link=shared \
-    link=shared \
     toolset=${TOOLSET} \
     include="${INCLUDE_PATH}" \
     cxxflags="${CXXFLAGS}" \
