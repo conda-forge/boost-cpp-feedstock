@@ -205,6 +205,3 @@ Feedstock Maintainers
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@xhochy](https://github.com/xhochy/)
 
-
-<!-- dummy commit to enable rerendering -->
-
